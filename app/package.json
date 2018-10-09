@@ -1,4 +1,7 @@
 {
+  "name": "Fluid-Contact",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
   "author": "Maye Edwin",
   "scripts": {
     "copy": "copyfiles -u 1 src/**/**/* src/**/* src/* build",
