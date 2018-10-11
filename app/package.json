@@ -2,7 +2,7 @@
   "name": "Fluid-Contact",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Maye Edwin",
+  "author": "Marizu-Ibewiro",
   "scripts": {
     "copy": "copyfiles -u 1 src/**/**/* src/**/* src/* build",
     "build": "npm run copy && workbox injectManifest sw-config.js",
