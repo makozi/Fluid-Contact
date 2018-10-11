@@ -1,71 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <!-- register service worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(function() {
-                        console.log("Service Worker Registered, Cheers to PWA Fire 🐹`");
-                    });
-            });
-        }
-    </script>
-    <!-- end of service worker -->
-    <title>PWA Fire App</title>
-    <meta name="theme-color" content="#fff" />
-    <!-- add web manifest -->
-    <link rel="manifest" href="/manifest.json">
-    <!-- add your web app icon url -->
-    <link rel="shortcut icon" sizes="32x32" href="https://pwafire.org/images/icons/pwafire32white.png">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- add canonical url -->
-    <link rel="canonical" href="https://pwafireapp.firebaseapp.com/">
-    <!-- add twitter meta data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:site_name" content="Web App Name">
-    <meta name="twitter:creator" content="@yourhandle">
-    <meta name="twitter:title" content="Web App Title">
-    <meta name="twitter:description" content="Web App or Page Description">
-    <meta name="twitter:image" content="images/sample.jpg">
-    <meta name="keywords" content="Maye Edwin, service worker, workbox, google developers, technology, PWAFire, javascript, json, web, progressive web apps, pwa" />
-    <meta name="author" content="Maye Edwin" />
-    <!-- add facebook sharing meta data -->
-    <meta property="og:title" content="Web App Title">
-    <meta property="og:site_name" content="Web App Name">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Web App or Page Description">
-    <meta property="og:image" content="images/sample.png">
-    <meta property="og:image:type" content="image/png" />
-    <!-- add web app styles; below is just an example; delete it -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <!-- add more of your fonts + font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Fluid Contact</title>
+    
+    <link rel="shortcut icon" sizes="32x32" href="../images/icons/favicon-32x32.PNG">
+    <!-- Bootstrap CSS CDN -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style type="text/css">
+        .logo {
+      width: 75px;
+      float: left;
+      margin-right: 15px;
+    }
+    
+    .form-group {
+      max-width: 500px;
+    }
+    
+    .actions {
+      padding: 10px 0;
+    }
+    
+    .glyphicon-euro {
+      font-size: 12px;
+    }
+    </style>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!--
-just a demo to show how pwafireapp works
--->
-    <div class="header-pwafire">
-        <img class="image-pwafire" src="images/pwafireapp-frog-icon.gif" alt="pwafireapp-logo">
-        <h3> Yey! I am <code>Beta</code> version of PWA Fire App makozi </h3>
-        <p> Have fun with me! Happy code dance 💃💃</p>
-        <p> Man's got to code better and relaxed 😋 😎 </p>
-        <p><a href="https://pwafire.org/developer/app" target="_blank">Get started here <i class="fas fa-rocket"></i></a></p>
-        <p><a href="pages/">Next Page <i class="fas fa-arrow-circle-right"></i></a></p>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Fluid Contact</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Contacts</p>
+                
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                
+               
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+               
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <!-- <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li> -->
+                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+           
+<div class="container">
+   
+    <main id="app">
+      <router-view></router-view>
+    </main>
+  </div>
+  
+  <template id="product-list">
+    <div>
+      
+      <div class="filters row">
+        <div class="form-group col-sm-3">
+          <label for="search-element"></label>
+          <input v-model="searchKey" class="form-control" id="search-element" requred/>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th class="col-sm-2">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="product in filteredProducts">
+          <td>
+            <router-link v-bind:to="{name: 'product', params: {product_id: product.id}}">{{ product.name }}</router-link>
+          </td>
+          <td>{{ product.description }}</td>
+          <td>
+            {{ product.price }}
+            <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
+          </td>
+          <td>
+            <router-link class="btn btn-warning btn-xs" v-bind:to="{name: 'product-edit', params: {product_id: product.id}}">Edit</router-link>
+            <router-link class="btn btn-danger btn-xs" v-bind:to="{name: 'product-delete', params: {product_id: product.id}}">Delete</router-link>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="actions">
+        <router-link class="btn btn-default" v-bind:to="{path: '/add-product'}">
+          <span class="btn btn-primary btn-xs"></span>
+          Add product
+        </router-link>
+      </div>
     </div>
-    <!--
-your web app
--->
+  </template>
+  
+  <template id="add-product">
+    <div>
+      <h2>Add Contact</h2>
+      <form v-on:submit="createProduct">
+        <div class="form-group">
+          <label for="add-name">Name</label>
+          <input class="form-control" id="add-name" v-model="product.name" required/>
+        </div>
+        <div class="form-group">
+          <label for="add-description">Email</label>
+         
+          <input class="form-control" id="add-description" v-model="product.description" required/>
+        </div>
+        <div class="form-group">
+          <label for="add-price">Phone Number <span class="glyphicon glyphicon-euro"></span></label>
+          <input type="number" class="form-control" id="add-price" v-model="product.price"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
+      </form>
+    </div>
+  </template>
+  
+  <template id="product">
+    <div>
+      <h2>{{ product.name }}</h2>
+      <b>Description: </b>
+      <div>{{ product.description }}</div>
+      <b>Price:</b>
+      <div>{{ product.price }}<span class="glyphicon glyphicon-euro"></span></div>
+      <br/>
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+      <router-link v-bind:to="'/'">Back to Contact list</router-link>
+    </div>
+  </template>
+  
+  <template id="product-edit">
+    <div>
+      <h2>Edit Contact</h2>
+      <form v-on:submit="updateProduct">
+        <div class="form-group">
+          <label for="edit-name">Name</label>
+          <input class="form-control" id="edit-name" v-model="product.name" required/>
+        </div>
+        <div class="form-group">
+          <label for="edit-description">Description</label>
+          <input class="form-control" id="edit-description" v-model="product.description" required/>
+          
+        </div>
+        <div class="form-group">
+          <label for="edit-price">Price, <span class="glyphicon glyphicon-euro"></span></label>
+          <input type="number" class="form-control" id="edit-price" v-model="product.price"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
+      </form>
+    </div>
+  </template>
+  
+  <template id="product-delete">
+    <div>
+      <h2>Delete Contact {{ product.name }}</h2>
+      <form v-on:submit="deleteProduct">
+        <p>The action cannot be undone.</p>
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
+      </form>
+    </div>
+  </template>
+  
+  
+  
+      <script src="assets/js/app.js"></script>
+        </div>
+    </div>
 
-    <!-- add web app scripts; below is just an 
-    example; delete it -->
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    <script src="assets/js/app.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
+<script>
+var products = [
+  {id: 1, name: 'Marizu-Ibewiro', description: 'marizumakozi97@gmail.com.', price: 2348173827638},
+  {id: 2, name: 'Ada Joseph', description: 'ada@gmail.com', price: 2349028338848},
+  {id: 3, name: 'Adebayo Iyo', description: 'adabayoiyo@gmail.com', price: 234802848587}
+];
+
+function findProduct (productId) {
+  return products[findProductKey(productId)];
+};
+
+function findProductKey (productId) {
+  for (var key = 0; key < products.length; key++) {
+    if (products[key].id == productId) {
+      return key;
+    }
+  }
+};
+
+var List = Vue.extend({
+  template: '#product-list',
+  data: function () {
+    return {products: products, searchKey: ''};
+  },
+  computed : {
+    filteredProducts: function () {
+    var self = this;
+    console.log()
+    return self.products.filter(function (product) {
+      return product.name.indexOf(self.searchKey) !== -1
+    })
+  }
+}
+});
+
+var Product = Vue.extend({
+  template: '#product',
+  data: function () {
+    return {product: findProduct(this.$route.params.product_id)};
+  }
+});
+
+var ProductEdit = Vue.extend({
+  template: '#product-edit',
+  data: function () {
+    return {product: findProduct(this.$route.params.product_id)};
+  },
+  methods: {
+    updateProduct: function () {
+      var product = this.product;
+      products[findProductKey(product.id)] = {
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        price: product.price
+      };
+      router.push('/');
+    }
+  }
+});
+
+var ProductDelete = Vue.extend({
+  template: '#product-delete',
+  data: function () {
+    return {product: findProduct(this.$route.params.product_id)};
+  },
+  methods: {
+    deleteProduct: function () {
+      products.splice(findProductKey(this.$route.params.product_id), 1);
+      router.push('/');
+    }
+  }
+});
+
+var AddProduct = Vue.extend({
+  template: '#add-product',
+  data: function () {
+    return {product: {name: '', description: '', price: ''}
+    }
+  },
+  methods: {
+    createProduct: function() {
+      var product = this.product;
+      products.push({
+        id: Math.random().toString().split('.')[1],
+        name: product.name,
+        description: product.description,
+        price: product.price
+      });
+      router.push('/');
+    }
+  }
+});
+
+var router = new VueRouter({
+  routes: [{path: '/', component: List},
+    {path: '/product/:product_id', component: Product, name: 'product'},
+    {path: '/add-product', component: AddProduct},
+    {path: '/product/:product_id/edit', component: ProductEdit, name: 'product-edit'},
+  {path:   '/product/:product_id/delete', component: ProductDelete, name: 'product-delete'}
+]});
+
+new Vue({
+  el: '#app',
+  router: router,
+  template: '<router-view></router-view>'
+});
+</script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@ if (workbox) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "1dd5e6a608242566d387f6e0c8180be7"
+    "revision": "e90b5737678091d17cf2cf5bb56402bb"
   },
   {
     "url": "manifest.json",
@@ -38,6 +38,10 @@ if (workbox) {
   {
     "url": "images/sample.gif",
     "revision": "af1c75fca697e689f560f79a432828ea"
+  },
+  {
+    "url": "images/icons/favicon-32x32.png",
+    "revision": "238e77c1bb0beb6a22bd9e5de21dc4bd"
   },
   {
     "url": "images/icons/icon-128x128.png",
@@ -77,7 +81,7 @@ if (workbox) {
   },
   {
     "url": "pages/index.html",
-    "revision": "b3314df09826cc9e1a22b41e9905cb53"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   },
   {
     "url": "assets/js/app.js",
@@ -86,6 +90,10 @@ if (workbox) {
   {
     "url": "assets/css/main.css",
     "revision": "83abe659e2be5bc5fd809c60543748d2"
+  },
+  {
+    "url": "assets/css/style.css",
+    "revision": "33d8fe6843959734a3635f7aa89ca745"
   },
   {
     "url": "assets/scss/app.scss",
