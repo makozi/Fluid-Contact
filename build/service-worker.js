@@ -9,7 +9,7 @@ if (workbox) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "ee3c56e11ffc4cc95659aa54b4e50622"
+    "revision": "6ad97c35fcf9615eb912dd76a202520d"
   },
   {
     "url": "manifest.json",
