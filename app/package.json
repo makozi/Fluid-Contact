@@ -13,8 +13,24 @@
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },
+
   "devDependencies": {
     "copyfiles": "^1.2.0",
     "workbox-cli": "^3.0.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
   }
+  
 }
