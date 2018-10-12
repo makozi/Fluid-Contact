@@ -9,7 +9,7 @@ if (workbox) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "f21eff0466596f6b2f6596e171fe073c"
+    "revision": "cd8cc4fbffefde416eff0aa463f1f51c"
   },
   {
     "url": "manifest.json",
@@ -93,7 +93,7 @@ if (workbox) {
   },
   {
     "url": "assets/css/style.css",
-    "revision": "33d8fe6843959734a3635f7aa89ca745"
+    "revision": "9a0ad254be14457273f6dd83a114458a"
   },
   {
     "url": "assets/scss/app.scss",
